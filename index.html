@@ -97,6 +97,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .stack-item:last-child{ border-bottom:0; }
 .seal{ display:inline-flex; align-items:center; gap:.4rem; font-size:.78rem; font-weight:700; color:#EAF0F6; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:.45rem .85rem; }
 .step-ico{ width:44px; height:44px; border-radius:12px; background:#0F6E6A; color:#fff; display:flex; align-items:center; justify-content:center; flex:0 0 auto; font-weight:800; }
+.comp-marquee-wrap{ background:#0B1826; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); overflow:hidden; padding:13px 0; }
+.comp-marquee-track{ display:flex; gap:10px; width:max-content; animation:comp-scroll 42s linear infinite; }
+.comp-marquee-wrap:hover .comp-marquee-track{ animation-play-state:paused; }
+.comp-pill{ display:inline-flex; align-items:center; gap:.4rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.13); color:#E8C477; font-size:.76rem; font-weight:700; padding:.5rem 1.05rem; border-radius:999px; white-space:nowrap; }
+@keyframes comp-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } html{ scroll-behavior:auto !important; } *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
 </style>
 </head>
@@ -130,6 +135,48 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 text-[12px] sm:text-[13px] font-bold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#D9A94A" stroke-width="1.7" stroke-linejoin="round"/></svg>Acesso imediato</div>
     </div>
   </section>
+
+  <!-- COMPETÊNCIAS MARQUEE -->
+  <div class="comp-marquee-wrap">
+    <div class="comp-marquee-track">
+      <span class="comp-pill">Administração e Controle</span>
+      <span class="comp-pill">Ambiental</span>
+      <span class="comp-pill">Contabilidade</span>
+      <span class="comp-pill">Dutos e Terminais</span>
+      <span class="comp-pill">Enfermagem do Trabalho</span>
+      <span class="comp-pill">Faixa de Dutos</span>
+      <span class="comp-pill">Inspeção de Equipamentos e Instalações</span>
+      <span class="comp-pill">Manutenção Elétrica</span>
+      <span class="comp-pill">Manutenção Eletrônica</span>
+      <span class="comp-pill">Manutenção Instrumentação</span>
+      <span class="comp-pill">Manutenção Mecânica</span>
+      <span class="comp-pill">Monitoramento Logístico</span>
+      <span class="comp-pill">Naval</span>
+      <span class="comp-pill">Projeto, Construção e Montagem Edificações</span>
+      <span class="comp-pill">Projeto, Construção e Montagem Mecânica</span>
+      <span class="comp-pill">Química do Petróleo</span>
+      <span class="comp-pill">Segurança do Trabalho</span>
+      <span class="comp-pill">Suprimento de Bens e Serviços</span>
+      <span class="comp-pill" aria-hidden="true">Administração e Controle</span>
+      <span class="comp-pill" aria-hidden="true">Ambiental</span>
+      <span class="comp-pill" aria-hidden="true">Contabilidade</span>
+      <span class="comp-pill" aria-hidden="true">Dutos e Terminais</span>
+      <span class="comp-pill" aria-hidden="true">Enfermagem do Trabalho</span>
+      <span class="comp-pill" aria-hidden="true">Faixa de Dutos</span>
+      <span class="comp-pill" aria-hidden="true">Inspeção de Equipamentos e Instalações</span>
+      <span class="comp-pill" aria-hidden="true">Manutenção Elétrica</span>
+      <span class="comp-pill" aria-hidden="true">Manutenção Eletrônica</span>
+      <span class="comp-pill" aria-hidden="true">Manutenção Instrumentação</span>
+      <span class="comp-pill" aria-hidden="true">Manutenção Mecânica</span>
+      <span class="comp-pill" aria-hidden="true">Monitoramento Logístico</span>
+      <span class="comp-pill" aria-hidden="true">Naval</span>
+      <span class="comp-pill" aria-hidden="true">Projeto, Construção e Montagem Edificações</span>
+      <span class="comp-pill" aria-hidden="true">Projeto, Construção e Montagem Mecânica</span>
+      <span class="comp-pill" aria-hidden="true">Química do Petróleo</span>
+      <span class="comp-pill" aria-hidden="true">Segurança do Trabalho</span>
+      <span class="comp-pill" aria-hidden="true">Suprimento de Bens e Serviços</span>
+    </div>
+  </div>
 
   <!-- SITUAÇÕES / DOR -->
   <section class="py-14 sm:py-20" style="background:linear-gradient(180deg,#ffffff 0%,#FAF8F1 14%,#FAF8F1 100%);">
