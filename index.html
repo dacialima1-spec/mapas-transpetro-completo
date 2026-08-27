@@ -487,14 +487,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
         c.addEventListener('click',function(e){ if(moved){e.preventDefault();e.stopPropagation();} },true);
         c.addEventListener('dragstart',function(e){ e.preventDefault(); });
       });
-      var cp=document.getElementById('carPrevias');
-      if(cp){
+      function startContinuousCarousel(id){
+        var cp=document.getElementById(id);
+        if(!cp)return;
         cp.classList.add('marquee');
         Array.prototype.slice.call(cp.children).forEach(function(s){ cp.appendChild(s.cloneNode(true)); });
         var half=function(){return cp.scrollWidth/2;};
         function tick(){ cp.scrollLeft+=0.5; if(cp.scrollLeft>=half())cp.scrollLeft-=half(); requestAnimationFrame(tick); }
         requestAnimationFrame(tick);
       }
+      startContinuousCarousel('carPrevias');
+      startContinuousCarousel('carUso');
       var compSource=document.querySelector('.comp-marquee-wrap');
       var compTarget=document.getElementById('compMarqueePrevias');
       if(compSource&&compTarget) compTarget.appendChild(compSource.cloneNode(true));
