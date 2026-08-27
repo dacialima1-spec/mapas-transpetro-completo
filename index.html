@@ -100,6 +100,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .comp-marquee-wrap{ background:#0B1826; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); overflow:hidden; padding:13px 0; }
 .comp-marquee-track{ display:flex; gap:10px; width:max-content; animation:comp-scroll 42s linear infinite; }
 .comp-marquee-wrap:hover .comp-marquee-track{ animation-play-state:paused; }
+.comp-marquee-slot{ width:100vw; margin-left:calc(50% - 50vw); }
 .comp-pill{ display:inline-flex; align-items:center; gap:.4rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.13); color:#E8C477; font-size:.76rem; font-weight:700; padding:.5rem 1.05rem; border-radius:999px; white-space:nowrap; }
 @keyframes comp-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } html{ scroll-behavior:auto !important; } *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
@@ -262,6 +263,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
         </div>
         <button class="carbtn next" onclick="slide(1,'carPrevias')" aria-label="Próximo">›</button>
       </div>
+      <div class="comp-marquee-slot mt-8" id="compMarqueePrevias"></div>
       <p class="mt-8 text-center text-ink-500 text-sm">Estes são 6 dos 280. Cada um coloca um tema do edital na sua memória.</p>
       <div class="text-center mt-6"><a href="#oferta" class="btn btn-gold !py-4 !px-9 text-base uppercase tracking-wide !text-white inline-flex" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero o pacote completo</a></div>
     </div>
@@ -490,14 +492,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
         cp.classList.add('marquee');
         Array.prototype.slice.call(cp.children).forEach(function(s){ cp.appendChild(s.cloneNode(true)); });
         var half=function(){return cp.scrollWidth/2;};
-        var paused=false, resumeT=null;
-        function pause(){ paused=true; if(resumeT){clearTimeout(resumeT);resumeT=null;} }
-        function resumeSoon(){ if(resumeT)clearTimeout(resumeT); resumeT=setTimeout(function(){paused=false;},2500); }
-        cp.addEventListener('pointerdown',pause); cp.addEventListener('touchstart',pause,{passive:true}); cp.addEventListener('mouseenter',pause); cp.addEventListener('wheel',function(){pause();resumeSoon();},{passive:true});
-        cp.addEventListener('pointerup',resumeSoon); cp.addEventListener('pointercancel',resumeSoon); cp.addEventListener('touchend',resumeSoon); cp.addEventListener('mouseleave',resumeSoon);
-        function tick(){ if(!paused){ cp.scrollLeft+=0.5; if(cp.scrollLeft>=half())cp.scrollLeft-=half(); } requestAnimationFrame(tick); }
-        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) requestAnimationFrame(tick);
+        function tick(){ cp.scrollLeft+=0.5; if(cp.scrollLeft>=half())cp.scrollLeft-=half(); requestAnimationFrame(tick); }
+        requestAnimationFrame(tick);
       }
+      var compSource=document.querySelector('.comp-marquee-wrap');
+      var compTarget=document.getElementById('compMarqueePrevias');
+      if(compSource&&compTarget) compTarget.appendChild(compSource.cloneNode(true));
     })();
   </script>
 </body>
