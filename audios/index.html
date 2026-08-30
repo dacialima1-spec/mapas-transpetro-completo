@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102234">
+  <meta name="description" content="Player dos Áudios Reta Final Transpetro: revisões de Português e Matemática baseadas no edital e nos mapas.">
+  <title>Áudios Reta Final | Mapas Reta Final Transpetro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#102234;
+      --ink:#16314a;
+      --teal:#0f6e6a;
+      --teal-dark:#0b5652;
+      --gold:#d9a94a;
+      --paper:#faf8f1;
+      --white:#fff;
+      --muted:#667085;
+      --line:#e3e7ec;
+      --soft:#eef6f5;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:0;-webkit-font-smoothing:antialiased}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    .topbar{background:var(--navy);color:#fff}
+    .topbar-inner{width:min(1120px,calc(100% - 32px));margin:auto;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand-mini{font-family:"Sora",sans-serif;font-weight:700;font-size:.86rem}
+    .back{color:#e8c477;text-decoration:none;font-size:.8rem;font-weight:700}
+    .shell{width:min(1120px,calc(100% - 32px));margin:auto;padding:28px 0 56px}
+    .intro{display:grid;grid-template-columns:112px minmax(0,1fr);gap:24px;align-items:center;margin-bottom:24px}
+    .cover{width:112px;aspect-ratio:1;object-fit:cover;border-radius:8px;box-shadow:0 12px 28px rgba(16,34,52,.16)}
+    .eyebrow{margin:0 0 8px;color:#9c7322;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+    h1{margin:0;font-family:"Sora",sans-serif;font-size:2.5rem;line-height:1.08;letter-spacing:0}
+    .lead{margin:10px 0 0;color:#536179;line-height:1.55;max-width:720px}
+    .player{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:18px;box-shadow:0 12px 30px rgba(16,34,52,.08);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 20px;align-items:center;margin-bottom:22px;position:sticky;top:10px;z-index:5}
+    .now-label{font-size:.68rem;font-weight:800;text-transform:uppercase;color:var(--teal);letter-spacing:.1em;margin-bottom:5px}
+    .now-title{font-family:"Sora",sans-serif;font-weight:700;line-height:1.25}
+    .now-meta{font-size:.78rem;color:var(--muted);margin-top:4px}
+    audio{width:100%;height:42px;grid-column:1/-1}
+    .nav-controls{display:flex;gap:8px}
+    .icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-weight:800;display:grid;place-items:center;transition:.15s}
+    .icon-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--soft)}
+    .toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}
+    .tabs{display:inline-flex;border:1px solid var(--line);border-radius:7px;background:#fff;padding:3px;gap:2px}
+    .tab{border:0;background:transparent;color:#59677d;border-radius:5px;padding:8px 12px;font-size:.78rem;font-weight:700;white-space:nowrap}
+    .tab.active{background:var(--navy);color:#fff}
+    .count{font-size:.78rem;color:var(--muted);font-weight:600}
+    .track-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .track{min-height:94px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;transition:.16s}
+    .track:hover{border-color:#b6c2cd;box-shadow:0 8px 20px rgba(16,34,52,.07);transform:translateY(-1px)}
+    .track.active{border-color:var(--teal);background:var(--soft);box-shadow:0 0 0 1px var(--teal)}
+    .track-number{width:42px;height:42px;border-radius:6px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:"Sora",sans-serif;font-size:.8rem;font-weight:800}
+    .track.active .track-number{background:var(--teal)}
+    .track-title{font-weight:700;line-height:1.25;font-size:.9rem}
+    .track-meta{font-size:.72rem;color:var(--muted);margin-top:5px}
+    .play{width:36px;height:36px;border:0;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:.82rem;padding-left:2px}
+    .track.active .play{background:var(--teal);color:#fff}
+    .empty{display:none;padding:32px;text-align:center;color:var(--muted)}
+    footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:.74rem}
+    @media(max-width:760px){
+      .shell{width:min(100% - 24px,620px);padding-top:20px}
+      .topbar-inner{width:calc(100% - 24px)}
+      .intro{grid-template-columns:78px minmax(0,1fr);gap:14px;margin-bottom:18px}
+      .cover{width:78px}
+      .lead{font-size:.86rem;margin-top:7px}
+      .player{top:6px;padding:14px;grid-template-columns:minmax(0,1fr) auto}
+      .track-list{grid-template-columns:1fr}
+      .toolbar{align-items:flex-start;flex-direction:column}
+      .tabs{width:100%;overflow-x:auto}
+      .tab{flex:1}
+      footer{flex-direction:column}
+    }
+    @media(max-width:430px){
+      .intro{grid-template-columns:1fr}
+      .cover{width:72px}
+      h1{font-size:1.55rem}
+      .player{position:relative;top:auto}
+      .track{grid-template-columns:38px minmax(0,1fr) 34px;padding:12px;gap:10px}
+      .track-number{width:38px;height:38px}
+      .play{width:34px;height:34px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-mini">Mapas Reta Final Transpetro</div>
+      <a class="back" href="../">Voltar ao site</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <img class="cover" src="../hero-geral-480.webp" alt="Mapas Reta Final Transpetro">
+      <div>
+        <p class="eyebrow">Ouça · Recupere · Confira</p>
+        <h1 id="page-title">Áudios Reta Final</h1>
+        <p class="lead">Revisões rápidas de Português e Matemática para estudar no celular. Escolha uma faixa e dê o play.</p>
+      </div>
+    </section>
+
+    <section class="player" aria-label="Player de áudio">
+      <div>
+        <div class="now-label">Tocando agora</div>
+        <div class="now-title" id="nowTitle">Compreensão, gêneros e inferência</div>
+        <div class="now-meta" id="nowMeta">Faixa 01 · Português · 5min54s</div>
+      </div>
+      <div class="nav-controls">
+        <button class="icon-btn" id="prevBtn" type="button" title="Faixa anterior" aria-label="Faixa anterior">‹</button>
+        <button class="icon-btn" id="nextBtn" type="button" title="Próxima faixa" aria-label="Próxima faixa">›</button>
+      </div>
+      <audio id="audioPlayer" controls preload="metadata">
+        <source id="audioSource" src="faixas/01-ARF-PT-01-compreensao-generos-inferencia.mp3" type="audio/mpeg">
+        Seu navegador não oferece suporte à reprodução de áudio.
+      </audio>
+    </section>
+
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="Filtrar módulo">
+        <button class="tab active" type="button" data-filter="all">Todas</button>
+        <button class="tab" type="button" data-filter="pt">Português</button>
+        <button class="tab" type="button" data-filter="mat">Matemática</button>
+        <button class="tab" type="button" data-filter="rev">Revisões</button>
+      </div>
+      <div class="count" id="trackCount">20 faixas · 59min16s</div>
+    </div>
+
+    <section class="track-list" id="trackList" aria-label="Lista de faixas"></section>
+    <div class="empty" id="emptyState">Nenhuma faixa encontrada.</div>
+
+    <footer>
+      <span>© 2026 Mapas Reta Final Transpetro</span>
+      <span>Material complementar · Uso individual</span>
+    </footer>
+  </main>
+
+  <script>
+    const tracks = [
+      {group:'pt', code:'ARF-PT-01', title:'Compreensão, gêneros e inferência', duration:'5min54s', file:'01-ARF-PT-01-compreensao-generos-inferencia.mp3'},
+      {group:'pt', code:'ARF-PT-02', title:'Ortografia oficial: grafia, acentuação e hífen', duration:'2min59s', file:'02-arf-pt-02-ortografia-oficial-grafia-acentuacao-e-hifen.mp3'},
+      {group:'pt', code:'ARF-PT-03', title:'Coesão textual: referência e sequenciação', duration:'2min49s', file:'03-arf-pt-03-coesao-textual-referencia-e-sequenciacao.mp3'},
+      {group:'pt', code:'ARF-PT-04', title:'Classes de palavras em funcionamento no texto', duration:'2min47s', file:'04-arf-pt-04-classes-de-palavras-em-funcionamento-no-texto.mp3'},
+      {group:'pt', code:'ARF-PT-05', title:'Concordância nominal e verbal', duration:'2min47s', file:'05-arf-pt-05-concordancia-nominal-e-verbal.mp3'},
+      {group:'pt', code:'ARF-PT-06', title:'Crase: condições de ocorrência e proibições', duration:'2min39s', file:'06-arf-pt-06-crase-condicoes-de-ocorrencia-e-proibicoes.mp3'},
+      {group:'pt', code:'ARF-PT-07', title:'Pontuação e efeitos de sentido', duration:'2min43s', file:'07-arf-pt-07-pontuacao-e-efeitos-de-sentido.mp3'},
+      {group:'pt', code:'ARF-PT-08', title:'Significação das palavras e sentido contextual', duration:'3min01s', file:'08-arf-pt-08-significacao-das-palavras-e-sentido-contextual.mp3'},
+      {group:'mat', code:'ARF-MAT-01', title:'Conjuntos numéricos, ordem e operações', duration:'2min54s', file:'09-arf-mat-01-conjuntos-numericos-ordem-e-operacoes.mp3'},
+      {group:'mat', code:'ARF-MAT-02', title:'Razão, proporção e regra de três', duration:'2min55s', file:'10-arf-mat-02-razao-proporcao-e-regra-de-tres.mp3'},
+      {group:'mat', code:'ARF-MAT-03', title:'Porcentagem e variações sucessivas', duration:'2min48s', file:'11-arf-mat-03-porcentagem-e-variacoes-sucessivas.mp3'},
+      {group:'mat', code:'ARF-MAT-04', title:'Relações e funções', duration:'2min47s', file:'12-arf-mat-04-relacoes-e-funcoes.mp3'},
+      {group:'mat', code:'ARF-MAT-05', title:'Equações e sistemas', duration:'2min54s', file:'13-arf-mat-05-equacoes-e-sistemas.mp3'},
+      {group:'mat', code:'ARF-MAT-06', title:'Análise combinatória', duration:'2min51s', file:'14-arf-mat-06-analise-combinatoria.mp3'},
+      {group:'mat', code:'ARF-MAT-07', title:'Probabilidade básica', duration:'2min36s', file:'15-arf-mat-07-probabilidade-basica.mp3'},
+      {group:'mat', code:'ARF-MAT-08', title:'Estatística: gráficos, centro e dispersão', duration:'2min47s', file:'16-arf-mat-08-estatistica-graficos-centro-e-dispersao.mp3'},
+      {group:'mat', code:'ARF-MAT-09', title:'Matemática financeira', duration:'2min45s', file:'17-arf-mat-09-matematica-financeira.mp3'},
+      {group:'mat', code:'ARF-MAT-10', title:'Geometria plana e espacial', duration:'2min48s', file:'18-arf-mat-10-geometria-plana-e-espacial.mp3'},
+      {group:'rev', code:'ARF-REV-01', title:'Revisão-relâmpago de Português', duration:'2min47s', file:'19-arf-rev-01-revisao-relampago-de-portugues.mp3'},
+      {group:'rev', code:'ARF-REV-02', title:'Revisão-relâmpago de Matemática', duration:'2min46s', file:'20-arf-rev-02-revisao-relampago-de-matematica.mp3'}
+    ];
+
+    const labels = {pt:'Português', mat:'Matemática', rev:'Revisão'};
+    const player = document.getElementById('audioPlayer');
+    const source = document.getElementById('audioSource');
+    const list = document.getElementById('trackList');
+    const nowTitle = document.getElementById('nowTitle');
+    const nowMeta = document.getElementById('nowMeta');
+    const count = document.getElementById('trackCount');
+    let current = 0;
+    let filter = 'all';
+
+    function render(){
+      const visible = tracks.map((track,index)=>({track,index})).filter(item=>filter==='all'||item.track.group===filter);
+      list.innerHTML = visible.map(({track,index})=>`
+        <button class="track ${index===current?'active':''}" type="button" data-index="${index}" aria-label="Ouvir ${track.title}">
+          <span class="track-number">${String(index+1).padStart(2,'0')}</span>
+          <span><span class="track-title">${track.title}</span><span class="track-meta">${track.code} · ${labels[track.group]} · ${track.duration}</span></span>
+          <span class="play" aria-hidden="true">▶</span>
+        </button>`).join('');
+      count.textContent = filter==='all' ? '20 faixas · 59min16s' : `${visible.length} faixas`;
+      document.getElementById('emptyState').style.display = visible.length ? 'none' : 'block';
+      list.querySelectorAll('.track').forEach(button=>button.addEventListener('click',()=>selectTrack(Number(button.dataset.index),true)));
+    }
+
+    function selectTrack(index, autoplay){
+      current = (index + tracks.length) % tracks.length;
+      const track = tracks[current];
+      source.src = `faixas/${track.file}`;
+      player.load();
+      nowTitle.textContent = track.title;
+      nowMeta.textContent = `Faixa ${String(current+1).padStart(2,'0')} · ${labels[track.group]} · ${track.duration}`;
+      render();
+      document.querySelector('.player').scrollIntoView({behavior:'smooth',block:'nearest'});
+      if(autoplay) player.play().catch(()=>{});
+    }
+
+    document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(item=>item.classList.remove('active'));
+      tab.classList.add('active');
+      filter = tab.dataset.filter;
+      render();
+    }));
+    document.getElementById('prevBtn').addEventListener('click',()=>selectTrack(current-1,true));
+    document.getElementById('nextBtn').addEventListener('click',()=>selectTrack(current+1,true));
+    player.addEventListener('ended',()=>selectTrack(current+1,true));
+    render();
+  </script>
+</body>
+</html>
