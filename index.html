@@ -369,18 +369,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 
   <!-- OFERTA -->
   <section id="oferta" class="dark-sec py-16 sm:py-24">
-    <style>
-      #oferta .offer-grid{grid-template-columns:minmax(0,1fr)}
-      @media(min-width:768px){#oferta .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media(min-width:1024px){#oferta .offer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    </style>
     <div class="divtop"></div>
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="text-center mb-8 reveal">
         <div class="mb-5"><div class="countdown-box" role="timer" aria-live="polite"><span data-countdown-prefix>Faltam</span><strong data-countdown-days>--</strong><span data-countdown-label>dias para a prova</span><small>Prova em 06/12/2026</small></div></div>
-        <h2 class="!text-xl sm:!text-2xl text-white">Encontre a opção da sua competência</h2>
+        <h2 class="!text-xl sm:!text-2xl text-white">Chegou a hora de acelerar os estudos</h2>
         <p class="mt-2 text-white/55 text-sm">Pagamento único. Sem mensalidade e sem assinatura.</p>
       </div>
+
+      <div class="comp-marquee-slot mb-8" id="compMarqueeOferta"></div>
 
       <article class="card p-5 sm:p-8 max-w-5xl mx-auto mb-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
@@ -389,7 +386,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
             <span class="mech mb-4">⚡ Todas as competências + 2 cadernos + 4 bônus</span>
             <div class="font-display font-bold text-ink-800 text-2xl">Kit Completo</div>
             <div class="mt-5 pt-4 pb-4 text-left" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-              <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas de todas as competências</span></div>
+              <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mais de 280 mapas visuais reta final de revisão</span></div>
               <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Caderno: 250 Questões Comentadas — Nível Médio e Técnico</span></div>
               <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Caderno: 250 Questões Comentadas — Nível Superior</span></div>
               <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
@@ -400,208 +397,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
             <div class="text-ink-500 mt-4">Hoje por apenas:</div>
             <div class="font-display font-bold text-6xl text-teal-700 leading-none mt-2">R$ 87,90</div>
             <a href="https://pay.hotmart.com/L107234787E?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-base uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero o Kit Completo</a>
-            <p class="mt-5 p-4 rounded-xl font-display font-extrabold text-sm leading-snug flex flex-col items-center gap-2" style="background:linear-gradient(135deg,#1677B8 0%,#16314A 100%);color:#FFFFFF;border:2px solid #72C7F2;box-shadow:0 14px 28px -14px rgba(22,119,184,.85)"><span>VEJA MAIS ABAIXO CASO QUEIRA APENAS PARA A VAGA QUE VOCÊ IRÁ FAZER</span><span aria-hidden="true" style="font-size:2rem;line-height:.8;color:#FFFFFF">↓</span></p>
           </div>
         </div>
       </article>
-
-      <div class="offer-grid grid gap-6 items-stretch">
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/dutos-e-terminais.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Dutos e Terminais" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Dutos e Terminais</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Dutos e Terminais</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/B107504758I?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/administracao-e-controle.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Administração e Controle" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Administração e Controle</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Administração e Controle</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/B107234723G?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/seguranca-do-trabalho.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Segurança do Trabalho" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Segurança do Trabalho</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Segurança do Trabalho</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/R107235015E?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/manutencao-e-mecanica.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Manutenção e Mecânica" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Manutenção e Mecânica</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Manutenção e Mecânica</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/A107234935G?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/ambiental.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Ambiental" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Ambiental</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Ambiental</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/P107521250H?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/contabilidade.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Contabilidade" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Contabilidade</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Contabilidade</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/Y107521319Y?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/enfermagem-do-trabalho.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Enfermagem do Trabalho" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Enfermagem do Trabalho</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Enfermagem do Trabalho</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/P107523975M?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/faixa-de-dutos.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Faixa de Dutos" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Faixa de Dutos</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Faixa de Dutos</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/U107524145P?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/manutencao-eletrica.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Manutenção Elétrica" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Manutenção Elétrica</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Manutenção Elétrica</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/F107524351J?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/manutencao-eletronica.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Manutenção Eletrônica" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Manutenção Eletrônica</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Manutenção Eletrônica</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/K107524524J?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/manutencao-instrumentacao.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Manutenção - Instrumentação" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Manutenção - Instrumentação</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Manutenção - Instrumentação</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/L107524882J?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/monitoramento-logistico.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Monitoramento Logístico" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Monitoramento Logístico</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Monitoramento Logístico</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/Q107527612H?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/quimica-do-petroleo.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Química do Petróleo" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Química do Petróleo</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Química do Petróleo</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/Q107528061J?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-
-        <article class="card p-5 sm:p-6 text-center flex flex-col">
-          <img src="ofertas/suprimentos-de-bens-e-servicos.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Mapas Visuais Completos da Competência Suprimentos de Bens e Serviços" class="w-full aspect-square object-cover mx-auto mb-5 rounded-xl">
-          <div class="font-display font-bold text-ink-800 text-xl">Suprimentos de Bens e Serviços</div>
-          <div class="mt-5 pt-4 pb-4 text-left flex-1" style="border-top:1px solid #EBEEF3; border-bottom:1px solid #EBEEF3">
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Mapas Visuais Completos da Competência Suprimentos de Bens e Serviços</span><span class="text-ink-400 line-through shrink-0">R$ 197</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 01: Cronograma Reta Final - Plano de Revisão</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 02: 50 Questões PT + MAT Comentadas</span><span class="text-ink-400 line-through shrink-0">R$ 27</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 03: Simulado Cronometrado 4 Horas</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-            <div class="stack-item text-ink-700" style="border-color:#EBEEF3"><span>Bônus 04: Edital Verticalizado em Checklist</span><span class="text-ink-400 line-through shrink-0">R$ 47</span></div>
-          </div>
-          <div class="text-ink-500 mt-4">Hoje por apenas:</div><div class="font-display font-bold text-5xl text-teal-700 leading-none mt-2">R$ 57,90</div>
-          <a href="https://pay.hotmart.com/L107528135V?checkoutMode=10" class="btn btn-gold w-full mt-5 !py-4 text-sm uppercase tracking-wide !text-white" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero esta competência</a>
-        </article>
-      </div>
 
       <div class="max-w-md mx-auto">
         <p class="text-center text-white/45 text-xs mt-6 reveal">Sem mensalidade. Sem assinatura. Sem pegadinha.</p>
@@ -745,6 +543,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
       var compSource=document.querySelector('.comp-marquee-wrap');
       var compTarget=document.getElementById('compMarqueePrevias');
       if(compSource&&compTarget) compTarget.appendChild(compSource.cloneNode(true));
+      var compOfferTarget=document.getElementById('compMarqueeOferta');
+      if(compSource&&compOfferTarget) compOfferTarget.appendChild(compSource.cloneNode(true));
     })();
   </script>
 </body>
