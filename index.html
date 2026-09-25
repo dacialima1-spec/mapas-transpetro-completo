@@ -105,6 +105,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .comp-marquee-wrap:hover .comp-marquee-track{ animation-play-state:paused; }
 .comp-marquee-slot{ width:100vw; margin-left:calc(50% - 50vw); }
 .comp-pill{ display:inline-flex; align-items:center; gap:.4rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.13); color:#E8C477; font-size:.76rem; font-weight:700; padding:.5rem 1.05rem; border-radius:999px; white-space:nowrap; }
+.countdown-box{ display:inline-flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:.35rem .6rem; padding:.7rem 1rem; border:1px solid rgba(114,199,242,.7); border-radius:14px; background:linear-gradient(135deg,#1677B8 0%,#16314A 100%); color:#fff; box-shadow:0 12px 28px -16px rgba(22,119,184,.85); font-family:'Sora',system-ui,sans-serif; }
+.countdown-box strong{ min-width:2ch; color:#FFE08A; font-size:clamp(1.75rem,5vw,2.4rem); line-height:.9; font-weight:800; }
+.countdown-box span{ font-size:.78rem; line-height:1.15; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.countdown-box small{ flex-basis:100%; color:rgba(255,255,255,.75); font:700 .7rem/1.2 'Plus Jakarta Sans',sans-serif; letter-spacing:.08em; }
 @keyframes comp-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } html{ scroll-behavior:auto !important; } *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; } }
 @supports (content-visibility:auto){
@@ -126,6 +130,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <span class="eyebrow center whitespace-nowrap !text-[0.6rem] sm:!text-[0.72rem] !tracking-[0.1em] sm:!tracking-[0.16em]">Mapas Reta Final Transpetro · Pacote Completo</span>
       <h1 class="text-[1.7rem] sm:text-[2.3rem] lg:text-[2.7rem] leading-[1.1] text-ink-800 mt-3 balance max-w-3xl mx-auto">Domine o Edital da TRANSPETRO, revise os conhecimentos gerais e a sua área de competência e garanta <span class="accent">a aprovação que paga R$ 6.539,54 por mês</span></h1>
+      <div class="mt-5"><div class="countdown-box" role="timer" aria-live="polite"><span data-countdown-prefix>Faltam</span><strong data-countdown-days>--</strong><span data-countdown-label>dias para a prova</span><small>Prova em 06/12/2026</small></div></div>
       <div class="min-w-0 max-w-sm sm:max-w-xl lg:max-w-3xl mx-auto mt-6"><picture><source type="image/avif" srcset="hero-geral-700.avif 700w, hero-geral-1050.avif 1050w, hero-geral-1254.avif 1254w" sizes="(max-width:639px) 384px, (max-width:1023px) 576px, 768px"><img src="hero-geral.webp" srcset="hero-geral-480.webp 700w, hero-geral.webp 1254w" sizes="(max-width:639px) 384px, (max-width:1023px) 576px, 768px" width="1254" height="1254" alt="Mapas Reta Final Transpetro: pacote completo com todas as competências" class="w-full h-auto" loading="eager" fetchpriority="high" onerror="this.outerHTML='&lt;div class=\'ph rounded-2xl\' style=\'aspect-ratio:16/9\'&gt;&lt;span class=\'lab\'&gt;Mockup dos 280 mapas&lt;/span&gt;&lt;/div&gt;'"></picture></div>
       <p class="mt-6 text-ink-600 text-[15px] leading-snug sm:text-lg sm:leading-relaxed max-w-xl mx-auto balance">280 mapas visuais que cobrem 100% do Anexo IV, para <strong class="text-ink-800">todas as 18 competências</strong>, e garantem sua aprovação no dia 06/12.</p>
       <a href="#previas" class="btn btn-gold mt-6 !py-4 !px-9 text-base uppercase tracking-wide !text-white inline-flex" style="text-shadow:0 1px 2px rgba(16,34,52,.35)">Quero ver os mapas →</a>
@@ -371,6 +376,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
     <div class="divtop"></div>
     <div class="max-w-7xl mx-auto px-5 sm:px-6">
       <div class="text-center mb-8 reveal">
+        <div class="mb-5"><div class="countdown-box" role="timer" aria-live="polite"><span data-countdown-prefix>Faltam</span><strong data-countdown-days>--</strong><span data-countdown-label>dias para a prova</span><small>Prova em 06/12/2026</small></div></div>
         <h2 class="!text-xl sm:!text-2xl text-white">Escolha a sua competência</h2>
         <p class="mt-2 text-white/55 text-sm">Pagamento único. Sem mensalidade e sem assinatura.</p>
       </div>
@@ -680,6 +686,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
+    (function(){
+      var target=new Date('2026-12-06T00:00:00-03:00').getTime();
+      function updateCountdown(){
+        var days=Math.max(0,Math.ceil((target-Date.now())/86400000));
+        document.querySelectorAll('.countdown-box').forEach(function(box){
+          var prefix=box.querySelector('[data-countdown-prefix]'),number=box.querySelector('[data-countdown-days]'),label=box.querySelector('[data-countdown-label]');
+          if(Date.now()<target){prefix.textContent='Faltam';number.textContent=days;label.textContent=days===1?'dia para a prova':'dias para a prova';}
+          else if(Date.now()<target+86400000){prefix.textContent='A prova é';number.textContent='HOJE';label.textContent='06/12/2026';}
+          else{prefix.textContent='Prova realizada';number.textContent='06/12';label.textContent='2026';}
+        });
+      }
+      updateCountdown();
+      setInterval(updateCountdown,3600000);
+    })();
     const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');obs.unobserve(e.target);}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     document.querySelectorAll('.compare-inner').forEach(function(inner){
